@@ -135,8 +135,8 @@ export const insertMockProducts = async (req, res) => {
   try {
 
     const count = 50;
-    await productManager.insertMockProducts(count);
-    return res.status(200).json({ message: 'Productos generados con éxito' });
+    const products = await productManager.insertMockProducts(count);
+    return res.status(200).json({ products: products, message: 'Productos generados con éxito' });
   } catch (error) {
     return res.status(500).json({ error: 'Error al generar los productos' });
   }

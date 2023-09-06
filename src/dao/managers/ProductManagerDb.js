@@ -143,7 +143,7 @@ class ProductManager {
     try {
       const count = Count;
       const products = await this.generateMockProducts(count);
-      await Product.insertMany(products);
+      return products;
     } catch (err) {
       throw new Error('Error inserting mock products');
     }

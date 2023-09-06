@@ -106,8 +106,8 @@ export default class ProductsRepository {
   }
   async insertMockProducts(Count) {
     try {
-      await this.productManager.insertMockProducts(Count);
-      console.log('Products has been added successfully.');
+      return await this.productManager.insertMockProducts(Count);
+      
     } catch (err) {
       throw err;
     }
